@@ -1,0 +1,52 @@
+{
+  "name": "gomerai-mt5-bridge-production",
+  "version": "1.0.0",
+  "description": "Production MT5 Bridge for GomerAI Installation Package",
+  "main": "bridge-launcher.js",
+  "scripts": {
+    "start": "node bridge-launcher.js",
+    "test": "node test-bridge-integration.js",
+    "health": "curl -s http://127.0.0.1:9876/health || echo 'Bridge not running'",
+    "status": "curl -s http://127.0.0.1:9876/status | jq . || echo 'Bridge not running'",
+    "install-deps": "npm install --production --no-optional",
+    "validate-config": "node validate-config.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.0",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "winston": "^3.11.0",
+    "fs-extra": "^11.1.1",
+    "uuid": "^9.0.1",
+    "chokidar": "^3.5.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "os": [
+    "linux",
+    "darwin",
+    "win32"
+  ],
+  "keywords": [
+    "mt5",
+    "metatrader",
+    "gcp",
+    "relay",
+    "bridge",
+    "gomerai",
+    "production"
+  ],
+  "author": "GomerAI LLC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gomersmoneytree/gomerai-mt5-bridge"
+  },
+  "bugs": {
+    "url": "https://github.com/gomersmoneytree/gomerai-mt5-bridge/issues"
+  },
+  "homepage": "https://gomerai.com"
+}
