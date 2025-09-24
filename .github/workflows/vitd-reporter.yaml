@@ -1,0 +1,9 @@
+name: VITD Reporter
+on:
+  schedule: [{ cron: "25 * * * *" }]
+  workflow_dispatch: {}
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "ok"  # placeholder to be replaced later

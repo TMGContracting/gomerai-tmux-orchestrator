@@ -1,0 +1,5 @@
+name: Policy CI
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  call:
+    uses: TMGContracting/gomerai-governance/.github/workflows/policy-ci-reusable.yaml@gov-v0.1

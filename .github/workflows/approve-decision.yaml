@@ -1,0 +1,20 @@
+name: Approve Decision
+on:
+  workflow_dispatch:
+    inputs:
+      decision_file:
+        required: true
+        type: string
+      role:
+        required: true
+        type: string
+      decision:
+        required: true
+        type: string
+jobs:
+  call:
+    uses: TMGContracting/gomerai-governance/.github/workflows/approve-decision-reusable.yaml@gov-v0.1
+    with:
+      decision_file: ${{ inputs.decision_file }}
+      role: ${{ inputs.role }}
+      decision: ${{ inputs.decision }}

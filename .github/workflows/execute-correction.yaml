@@ -1,0 +1,17 @@
+name: Execute Deterministic Correction
+on:
+  workflow_dispatch:
+    inputs:
+      decision_file:
+        required: true
+        type: string
+      runbook:
+        required: false
+        type: string
+jobs:
+  call:
+    uses: TMGContracting/gomerai-governance/.github/workflows/execute-correction-reusable.yaml@gov-v0.1
+    with:
+      decision_file: ${{ inputs.decision_file }}
+      runbook: ${{ inputs.runbook }}
+      mode: infra
